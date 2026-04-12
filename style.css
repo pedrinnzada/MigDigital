@@ -746,8 +746,9 @@ button {
   width: clamp(240px, 40vw, 380px);
   height: clamp(340px, 60vh, 520px);
   display: flex;
-  align-items: center;
+ 
   justify-content: center;
+  padding-bottom: 40px;
 }
 
 .att-img-wrap img {
@@ -893,12 +894,35 @@ button {
 
 @media (max-width: 600px) {
   .att-layout {
-    flex-wrap: wrap;
-    flex-direction: column-reverse;
+    position: relative;
+    height: 520px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+  }
+
+  .att-main-visual {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
   }
 
   .att-arrow {
-    display: none;
+    display: flex;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .att-arrow.att-prev {
+    left: 10px;
+  }
+
+  .att-arrow.att-next {
+    right: 10px;
   }
 
   .att-name-xl {
@@ -1457,6 +1481,11 @@ button {
 
   .nav-hamburger {
     display: flex;
+  }
+
+  .att-img-wrap {
+    width: 60%;
+    height: auto;
   }
 
   .hero {

@@ -362,6 +362,37 @@ window.addEventListener('scroll',()=>{
   // Init first attendant
   updateAttendant(0, 0);
 
+  // ─── Mobile swipe support ────────────────────
+  const attendantCard = document.getElementById('attendant-card');
+  let startX = 0, currentX = 0, startTime = 0;
+
+  attendantCard?.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    startTime = Date.now();
+  }, { passive: true });
+
+  attendantCard?.addEventListener('touchmove', (e) => {
+    currentX = e.touches[0].clientX;
+  }, { passive: true });
+
+  attendantCard?.addEventListener('touchend', () => {
+    const deltaX = startX - currentX;
+    const deltaTime = Date.now() - startTime;
+    const velocity = Math.abs(deltaX) / deltaTime;
+
+    if (deltaTime < 500 && velocity > 0.1 && Math.abs(deltaX) > 50) {
+      if (deltaX > 0) {
+        // Swipe left -> next
+        currentAtt = (currentAtt + 1) % attendants.length;
+        updateAttendant(currentAtt, 1);
+      } else {
+        // Swipe right -> prev
+        currentAtt = (currentAtt - 1 + attendants.length) % attendants.length;
+        updateAttendant(currentAtt, -1);
+      }
+    }
+  }, { passive: true });
+
   // ─── WhatsApp button (Open Modal) ────────────
   document.getElementById('btn-whatsapp')?.addEventListener('click', () => {
     const modal = document.getElementById('lead-modal');

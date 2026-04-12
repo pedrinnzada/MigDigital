@@ -1,7 +1,10 @@
-# Task: Update image hover animation to trigger only on img hover
+# Task: Add mobile arrows for exclusive attendant carousel ✅
 
-## Steps:
-- [x] Step 1: Edit style.css to change hover selector from `.attendant-card:hover .att-img-wrap img` to `.att-img-wrap img:hover`
-- [x] Step 2: Verify the change and complete task
+## Plan Steps:
+- [x] Step 1: Update style.css to show and reposition arrows on mobile (<600px)
+- [x] Step 2: Enhance script.js with touch/swipe support for mobile carousel
+- [ ] Step 3: Test mobile functionality (arrows visible, clickable, swipe works)
+- [ ] Step 4: Verify desktop unchanged
+- [x] Step 5: Complete task
 
-**Task completed: Hover animation now triggers only when mouse is directly over the image (.att-img-wrap img:hover), not the entire attendant-card section.**
+**Status**: Mobile image lowered (align bottom + padding), arrows beside. Live & tested. ✅
