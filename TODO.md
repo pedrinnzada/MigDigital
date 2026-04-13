@@ -1,10 +1,9 @@
-# Task: Add mobile arrows for exclusive attendant carousel ✅
+# TODO: Highlight "Empréstimo sem SPC/Serasa" on landing page
 
-## Plan Steps:
-- [x] Step 1: Update style.css to show and reposition arrows on mobile (<600px)
-- [x] Step 2: Enhance script.js with touch/swipe support for mobile carousel
-- [ ] Step 3: Test mobile functionality (arrows visible, clickable, swipe works)
-- [ ] Step 4: Verify desktop unchanged
-- [x] Step 5: Complete task
+## Plan Breakdown
+✅ 1. Create TODO.md  
+✅ 2. Add new hero-badge to index.html  
+✅ 3. Add .no-spc-badge styles to style.css
+✅ 4. Verify changes and complete
 
-**Status**: Mobile image lowered (align bottom + padding), arrows beside. Live & tested. ✅
+**Status:** ✅ TASK COMPLETED. New prominent badge added to hero section: "Empréstimo SEM consulta ao SPC e Serasa". Refresh browser to view the highlighted feature on the landing page.
