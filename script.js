@@ -199,24 +199,13 @@ window.addEventListener('scroll',()=>{
 
   // ─── Attendants data ─────────────────────────
   const attendants = [
-    {
-      name: 'Carlos Eduardo',
-      role: 'Consultora de Crédito',
-      whatsapp: '5531900000001',
-      img: 'rep1.png'
-    },
-    {
-      name: 'Mariana Silva',
-      role: 'Gerente de Crédito',
-      whatsapp: '5531900000002',
-      img: 'rep2.png'
-    },
-    {
-      name: 'Fernando Lima',
-      role: 'Especialista Financeira',
-      whatsapp: '5531900000003',
-      img: 'rep3.png'
-    }
+    { name: 'David Thiago', role: 'Consultor de Crédito', whatsapp: '5531991873155' },
+    { name: 'Carla', role: 'Consultora de Crédito', whatsapp: '5531991873155' },
+    { name: 'Ronaldo', role: 'Consultor de Crédito', whatsapp: '5531991873155' },
+    { name: 'Leonardo', role: 'Consultor de Crédito', whatsapp: '5531991873155' },
+    { name: 'Ana', role: 'Consultora de Crédito', whatsapp: '5531991873155' },
+    { name: 'Everton', role: 'Consultor de Crédito', whatsapp: '5531991873155' },
+    { name: 'Luiz', role: 'Consultor de Crédito', whatsapp: '5531991873155' }
   ];
 
   const cursorDot  = document.getElementById('cursor-dot');
@@ -258,47 +247,17 @@ window.addEventListener('scroll',()=>{
 
 
   // Placeholder SVGs with different accent colors
-  const placeholderSVGs = [
-    (name) => `<svg viewBox="0 0 200 260" fill="none" xmlns="http://www.w3.org/2000/svg" class="att-svg">
-      <defs>
-        <radialGradient id="bg0" cx="50%" cy="40%" r="60%">
-          <stop offset="0%" stop-color="#1a0505"/>
-          <stop offset="100%" stop-color="#0d0d0d"/>
-        </radialGradient>
-      </defs>
-      <rect width="200" height="260" fill="url(#bg0)" rx="12"/>
-      <circle cx="100" cy="88" r="44" fill="#1f1f1f" stroke="#ff0000" stroke-width="1.5"/>
-      <circle cx="100" cy="78" r="22" fill="#ff000022"/>
-      <text x="100" y="85" text-anchor="middle" fill="#ff0000" font-size="26" font-family="Bebas Neue" letter-spacing="2">${name.split(' ').map(w=>w[0]).join('').slice(0,2)}</text>
-      <path d="M30 240 C30 185 170 185 170 240" fill="#1f1f1f" stroke="#ff000033" stroke-width="1"/>
-    </svg>`,
-    (name) => `<svg viewBox="0 0 200 260" fill="none" xmlns="http://www.w3.org/2000/svg" class="att-svg">
-      <defs>
-        <radialGradient id="bg1" cx="50%" cy="40%" r="60%">
-          <stop offset="0%" stop-color="#0a0a0a"/>
-          <stop offset="100%" stop-color="#050505"/>
-        </radialGradient>
-      </defs>
-      <rect width="200" height="260" fill="url(#bg1)" rx="12"/>
-      <rect x="70" y="44" width="60" height="60" rx="30" fill="#161616" stroke="#ff0000" stroke-width="1.5"/>
-      <circle cx="100" cy="74" r="20" fill="#ff000015"/>
-      <text x="100" y="81" text-anchor="middle" fill="#ff0000" font-size="24" font-family="Bebas Neue" letter-spacing="2">${name.split(' ').map(w=>w[0]).join('').slice(0,2)}</text>
-      <path d="M35 245 C35 188 165 188 165 245" fill="#161616" stroke="#ff000025"/>
-      <circle cx="100" cy="74" r="44" fill="none" stroke="#ff000018" stroke-width="1" stroke-dasharray="4 4"/>
-    </svg>`,
-    (name) => `<svg viewBox="0 0 200 260" fill="none" xmlns="http://www.w3.org/2000/svg" class="att-svg">
-      <defs>
-        <radialGradient id="bg2" cx="40%" cy="35%" r="65%">
-          <stop offset="0%" stop-color="#120303"/>
-          <stop offset="100%" stop-color="#080808"/>
-        </radialGradient>
-      </defs>
-      <rect width="200" height="260" fill="url(#bg2)" rx="12"/>
-      <polygon points="100,44 144,70 144,118 100,144 56,118 56,70" fill="#141414" stroke="#ff0000" stroke-width="1.5"/>
-      <text x="100" y="103" text-anchor="middle" fill="#ff0000" font-size="26" font-family="Bebas Neue" letter-spacing="2">${name.split(' ').map(w=>w[0]).join('').slice(0,2)}</text>
-      <path d="M28 248 C28 186 172 186 172 248" fill="#141414" stroke="#ff000028"/>
-    </svg>`
-  ];
+  const avatarSVG = `<svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="att-svg">
+    <defs>
+      <linearGradient id="gradAvatar" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#eba32d" />
+        <stop offset="100%" stop-color="#c27d11" />
+      </linearGradient>
+    </defs>
+    <circle cx="100" cy="100" r="95" stroke="url(#gradAvatar)" stroke-width="2" fill="rgba(235, 163, 45, 0.05)" />
+    <circle cx="100" cy="80" r="35" fill="url(#gradAvatar)" />
+    <path d="M40 170C40 140 66.8629 125 100 125C133.137 125 160 140 160 170" stroke="url(#gradAvatar)" stroke-width="15" stroke-linecap="round" />
+  </svg>`;
 
   let currentAtt = 0;
 
@@ -323,18 +282,22 @@ window.addEventListener('scroll',()=>{
 
       // Update image
       if (attImg) {
-        if (att.img) {
-          attImg.innerHTML = `<img src="${att.img}" alt="${att.name}" />`;
-        } else {
-          attImg.innerHTML = placeholderSVGs[index % placeholderSVGs.length](att.name);
-        }
+        attImg.innerHTML = avatarSVG;
       }
 
       // Update counter
       if (attCounter) attCounter.textContent = `${index + 1} / ${attendants.length}`;
 
       // Update dots
-      attDots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+      const dotsContainer = document.getElementById('att-dots');
+      if (dotsContainer) {
+        // Ensure correct number of dots
+        if (dotsContainer.children.length !== attendants.length) {
+          dotsContainer.innerHTML = attendants.map((_, i) => `<span class="att-dot ${i === index ? 'active' : ''}"></span>`).join('');
+        } else {
+          Array.from(dotsContainer.children).forEach((dot, i) => dot.classList.toggle('active', i === index));
+        }
+      }
 
       // Animate in
       if (card) {
@@ -396,10 +359,6 @@ window.addEventListener('scroll',()=>{
   // ─── WhatsApp button (Open Modal) ────────────
   document.getElementById('btn-whatsapp')?.addEventListener('click', () => {
     const modal = document.getElementById('lead-modal');
-    const targetAttName = document.getElementById('target-att-name');
-    const att = attendants[currentAtt];
-    
-    if (targetAttName) targetAttName.textContent = att.name;
     modal?.classList.add('open');
     document.body.style.overflow = 'hidden';
   });
@@ -480,5 +439,106 @@ window.addEventListener('scroll',()=>{
 
 
   // ─── Input hover glow removed ────────────────
+
+
+  // ─── CHATBOT LOGIC ────────────────────────────
+  const chatbotToggle = document.getElementById('chatbot-toggle');
+  const chatbotWindow = document.getElementById('chatbot-window');
+  const chatbotClose = document.getElementById('chatbot-close');
+  const chatbotMessages = document.getElementById('chatbot-messages');
+  const chatbotOptions = document.getElementById('chatbot-options');
+
+  const botResponses = {
+    start: {
+      text: "Olá! Sou o MigRobô. Como posso te ajudar hoje?",
+      options: [
+        { text: "Como funciona?", id: "how_works" },
+        { text: "Localização", id: "location" },
+        { text: "Horário", id: "hours" },
+        { text: "Simular Empréstimo", id: "simulate" },
+        { text: "Falar com atendente", id: "talk_human" }
+      ]
+    },
+    how_works: {
+      text: "Nosso processo é 100% digital! Você preenche seus dados, analisamos sua proposta e, se aprovado, o dinheiro cai na conta em até 24h úteis.",
+      options: [{ text: "Voltar", id: "start" }]
+    },
+    location: {
+      text: "Estamos localizados em Sete Lagoas, MG. Mas atendemos digitalmente em todo o Brasil!",
+      options: [{ text: "Voltar", id: "start" }]
+    },
+    hours: {
+      text: "Nosso horário de atendimento é de Segunda a Sexta, das 08h às 18h.",
+      options: [{ text: "Voltar", id: "start" }]
+    },
+    simulate: {
+      text: "Para simular, basta clicar no botão 'Solicitar Empréstimo' no topo da página ou preencher o formulário no WhatsApp!",
+      options: [{ text: "Ir para WhatsApp", id: "talk_human" }, { text: "Voltar", id: "start" }]
+    },
+    talk_human: {
+      text: "Vou te encaminhar para um de nossos especialistas no WhatsApp. Só um momento...",
+      action: () => {
+        setTimeout(() => {
+          window.open('https://wa.me/5531991873155', '_blank');
+        }, 1000);
+      },
+      options: [{ text: "Voltar", id: "start" }]
+    }
+  };
+
+  let isFirstOpen = true;
+
+  function toggleChat() {
+    chatbotWindow.classList.toggle('open');
+    if (isFirstOpen && chatbotWindow.classList.contains('open')) {
+      showResponse('start');
+      isFirstOpen = false;
+    }
+  }
+
+  function addMessage(text, type = 'bot') {
+    const msg = document.createElement('div');
+    msg.className = `msg msg-${type}`;
+    msg.textContent = text;
+    chatbotMessages.appendChild(msg);
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+  }
+
+  function showThinking() {
+    const thinking = document.createElement('div');
+    thinking.className = 'thinking';
+    thinking.innerHTML = '<span></span><span></span><span></span>';
+    chatbotMessages.appendChild(thinking);
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    return thinking;
+  }
+
+  function showResponse(id) {
+    const response = botResponses[id];
+    chatbotOptions.innerHTML = '';
+    
+    const thinking = showThinking();
+    
+    setTimeout(() => {
+      thinking.remove();
+      addMessage(response.text, 'bot');
+      
+      if (response.action) response.action();
+      
+      response.options.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.className = 'opt-btn';
+        btn.textContent = opt.text;
+        btn.onclick = () => {
+          addMessage(opt.text, 'user');
+          showResponse(opt.id);
+        };
+        chatbotOptions.appendChild(btn);
+      });
+    }, 1500);
+  }
+
+  chatbotToggle?.addEventListener('click', toggleChat);
+  chatbotClose?.addEventListener('click', toggleChat);
 
 });
