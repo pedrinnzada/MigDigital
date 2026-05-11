@@ -246,18 +246,9 @@ window.addEventListener('scroll',()=>{
 })();
 
 
-  // Placeholder SVGs with different accent colors
-  const avatarSVG = `<svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="att-svg">
-    <defs>
-      <linearGradient id="gradAvatar" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#eba32d" />
-        <stop offset="100%" stop-color="#c27d11" />
-      </linearGradient>
-    </defs>
-    <circle cx="100" cy="100" r="95" stroke="url(#gradAvatar)" stroke-width="2" fill="rgba(235, 163, 45, 0.05)" />
-    <circle cx="100" cy="80" r="35" fill="url(#gradAvatar)" />
-    <path d="M40 170C40 140 66.8629 125 100 125C133.137 125 160 140 160 170" stroke="url(#gradAvatar)" stroke-width="15" stroke-linecap="round" />
-  </svg>`;
+  // Avatares de atendimento (substitui SVGs por imagens)
+  const avatarDavid = `<img src="avatar.png" alt="Avatar" class="att-avatar-img">`;
+  const avatarAna = `<img src="avatarf.png" alt="Avatar" class="att-avatar-img">`;
 
   let currentAtt = 0;
 
@@ -282,7 +273,8 @@ window.addEventListener('scroll',()=>{
 
       // Update image
       if (attImg) {
-        attImg.innerHTML = avatarSVG;
+        const isGroupF = ['Ana', 'Carla'].includes(att.name);
+        attImg.innerHTML = isGroupF ? avatarAna : avatarDavid;
       }
 
       // Update counter
