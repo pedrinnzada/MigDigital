@@ -479,7 +479,8 @@ window.addEventListener('scroll',()=>{
       text: "Vou te encaminhar para um de nossos especialistas no WhatsApp. Só um momento...",
       action: () => {
         setTimeout(() => {
-          window.open('https://wa.me/553131526622', '_blank');
+          const whatsapp = (attendants[currentAtt]?.whatsapp || '553131526622');
+          window.open(`https://wa.me/${whatsapp}`, '_blank');
         }, 1000);
       },
       options: [{ text: "Voltar", id: "start" }]
