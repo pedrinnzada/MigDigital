@@ -199,13 +199,13 @@ window.addEventListener('scroll',()=>{
 
   // ─── Attendants data ─────────────────────────
   const attendants = [
-    { name: 'David Thiago', role: 'Consultor de Crédito', whatsapp: '5531991873155' },
-    { name: 'Carla', role: 'Consultora de Crédito', whatsapp: '5531991873155' },
-    { name: 'Ronaldo', role: 'Consultor de Crédito', whatsapp: '5531991873155' },
-    { name: 'Leonardo', role: 'Consultor de Crédito', whatsapp: '5531991873155' },
-    { name: 'Ana', role: 'Consultora de Crédito', whatsapp: '5531991873155' },
-    { name: 'Everton', role: 'Consultor de Crédito', whatsapp: '5531991873155' },
-    { name: 'Luiz', role: 'Consultor de Crédito', whatsapp: '5531991873155' }
+    { name: 'David Thiago', role: 'Consultor de Crédito', whatsapp: '553131526622' },
+    { name: 'Carla', role: 'Consultora de Crédito', whatsapp: '553131526622' },
+    { name: 'Ronaldo', role: 'Consultor de Crédito', whatsapp: '553131526622' },
+    { name: 'Leonardo', role: 'Consultor de Crédito', whatsapp: '553131526622' },
+    { name: 'Ana', role: 'Consultora de Crédito', whatsapp: '553131526622' },
+    { name: 'Everton', role: 'Consultor de Crédito', whatsapp: '553131526622' },
+    { name: 'Luiz', role: 'Consultor de Crédito', whatsapp: '553131526622' }
   ];
 
   const cursorDot  = document.getElementById('cursor-dot');
@@ -472,14 +472,14 @@ window.addEventListener('scroll',()=>{
       options: [{ text: "Voltar", id: "start" }]
     },
     simulate: {
-      text: "Para simular, basta clicar no botão 'Solicitar Empréstimo' no topo da página ou preencher o formulário no WhatsApp!",
+      text: "Para simular, basta clicar no botão 'Chamar no Whatsapp' e preencher o formulário no WhatsApp!",
       options: [{ text: "Ir para WhatsApp", id: "talk_human" }, { text: "Voltar", id: "start" }]
     },
     talk_human: {
       text: "Vou te encaminhar para um de nossos especialistas no WhatsApp. Só um momento...",
       action: () => {
         setTimeout(() => {
-          window.open('https://wa.me/5531991873155', '_blank');
+          window.open('https://wa.me/553131526622', '_blank');
         }, 1000);
       },
       options: [{ text: "Voltar", id: "start" }]
