@@ -205,7 +205,10 @@ window.addEventListener('scroll',()=>{
     { name: 'Leonardo', role: 'Consultor de Crédito', whatsapp: '553131526622' },
     { name: 'Ana', role: 'Consultora de Crédito', whatsapp: '553131526622' },
     { name: 'Everton', role: 'Consultor de Crédito', whatsapp: '553131526622' },
-    { name: 'Luiz', role: 'Consultor de Crédito', whatsapp: '553131526622' }
+    { name: 'Luiz', role: 'Consultor de Crédito', whatsapp: '553131526622' },
+    { name: 'Valdmar', role: 'Consultor de Crédito', whatsapp: '553131526622' },
+    { name: 'Eliton', role: 'Consultor de Crédito', whatsapp: '553131526622' },
+    { name: 'Lopes', role: 'Consultor de Crédito', whatsapp: '553131526622' }
   ];
 
   const cursorDot  = document.getElementById('cursor-dot');
