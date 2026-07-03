@@ -209,7 +209,7 @@ window.addEventListener('scroll',()=>{
     { name: 'Valdmar', role: 'Consultor de Crédito', whatsapp: '553131526622' },
     { name: 'Eliton', role: 'Consultor de Crédito', whatsapp: '553131526622' },
     { name: 'Lopes', role: 'Consultor de Crédito', whatsapp: '553131526622' },
-    { name: 'Carine', role: 'Consultora de Crédito', whatsapp: '553131526622' }
+    { name: 'Karine', role: 'Consultora de Crédito', whatsapp: '553131526622' }
   ];
 
   const cursorDot  = document.getElementById('cursor-dot');
